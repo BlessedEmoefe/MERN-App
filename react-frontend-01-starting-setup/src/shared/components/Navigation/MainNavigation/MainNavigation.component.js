@@ -2,19 +2,35 @@ import React, { useState } from "react";
 import { MainHeader } from "../MainHeader/MainHeader.component";
 import { NavLinks } from "../NavLinks/NavLinks.component";
 import { SideDrawer } from "../SideDrawer/SideDrawer.component";
-import {DrawerNav, MenuIcon, HeaderWrapper, H1, Nav } from "./MainNavigation.styles";
+import {
+  DrawerNav,
+  MenuIcon,
+  HeaderWrapper,
+  H1,
+  Nav,
+} from "./MainNavigation.styles";
+import {Backdrop} from "../../UIElements/Backdrop/Backdrop.component";
 
 export const MainNavigation = ({ children }) => {
-  const [drawerIsOpen, setDrawerIsOpen] = useStateate(false)
+  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+  const handleOpenDrawer = () => {
+    setDrawerIsOpen(true);
+  };
+  const handleCloseDrawer = () => {
+    setDrawerIsOpen(false);
+  };
   return (
     <React.Fragment>
-      <SideDrawer>
+      {drawerIsOpen && <Backdrop onClick={handleCloseDrawer} />}
+
+      <SideDrawer show={drawerIsOpen} onClick={handleCloseDrawer}>
         <DrawerNav>
           <NavLinks />
         </DrawerNav>
       </SideDrawer>
+
       <MainHeader>
-        <MenuIcon fontSize={"1.2rem"} color="#fff" />
+        <MenuIcon fontSize={"1.2rem"} color="#fff" onClick={handleOpenDrawer} />
         <HeaderWrapper to="/">
           <H1>Your Places</H1>
         </HeaderWrapper>

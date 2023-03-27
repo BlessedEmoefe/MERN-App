@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import { NavLink } from "react-router-dom";
 
 export const SideDrawerContainer = styled.aside`
   position: fixed;
@@ -9,8 +8,12 @@ export const SideDrawerContainer = styled.aside`
   height: 100vh;
   width:70%;
   background:#fff;
+  display:none;
   /* box-shadow: 0 ; */
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
+      display:flex;
+      flex-direction: column;
+      align-items:center;
   }
 `;

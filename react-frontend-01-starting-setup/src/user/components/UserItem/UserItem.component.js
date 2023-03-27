@@ -1,8 +1,8 @@
 import React from "react";
 import { Avatar } from "../../../shared/components/UIElements/Avatar/Avatar.component";
+import { CardWrapper } from "../../../shared/components/UIElements/CardWrapper/CardWrapper.component";
 import {
   UserItemContainer,
-  UserItemContent,
   UserItemLinkWrapper,
   UserItemImage,
   UserItemInfo,
@@ -13,7 +13,7 @@ import {
 export const UserItem = ({ id, name, image, places }) => {
   return (
     <UserItemContainer>
-      <UserItemContent>
+      <CardWrapper>
         <UserItemLinkWrapper to={`/${id}/places`}>
           <UserItemImage>
             <Avatar image={image} alt={name} />
@@ -25,7 +25,7 @@ export const UserItem = ({ id, name, image, places }) => {
             </UserPlaceCount>
           </UserItemInfo>
         </UserItemLinkWrapper>
-      </UserItemContent>
+      </CardWrapper>
     </UserItemContainer>
   );
 };

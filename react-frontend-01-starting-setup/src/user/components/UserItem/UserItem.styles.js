@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const UserItemContainer = styled.li`
   margin: 1rem;
-  width: calc(45% - 2rem);
+  width: calc(50% - 2rem);
   min-width: 17.5rem;
   :hover,
   :active {
@@ -12,15 +12,7 @@ export const UserItemContainer = styled.li`
     }
   }
 `;
-export const UserItemContent = styled.div`
-  position: relative;
-  margin: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 6px;
-  /* padding: 1rem; */
-  overflow: hidden;
-  background: white;
-`;
+
 export const UserItemLinkWrapper = styled(Link)`
   display: flex;
   align-items: center;
